@@ -2,7 +2,8 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": false
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -31,12 +32,12 @@
               "src/styles.scss",
               {
                 "input": "src/themes/lara-light-blue.scss",
-                "bundleName": "lara-light",
+                "bundleName": "lara-light-blue",
                 "inject": false
               },
               {
                 "input": "src/themes/lara-dark-blue.scss",
-                "bundleName": "lara-dark",
+                "bundleName": "lara-dark-blue",
                 "inject": false
               }
             ],

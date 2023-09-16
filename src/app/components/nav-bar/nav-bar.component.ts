@@ -9,8 +9,8 @@ import { ThemeService } from 'src/app/theme.service';
 export class NavBarComponent {
   constructor(private themeService: ThemeService) {}
 
-  LARA_DARK: string = 'lara-dark';
-  LARA_LIGHT: string = 'lara-light';
+  LARA_DARK: string = 'lara-dark-blue';
+  LARA_LIGHT: string = 'lara-light-blue';
 
   changeTheme(theme: string) {
     this.themeService.switchTheme(theme);
