@@ -11,6 +11,7 @@ export class NavBarComponent {
 
   LARA_DARK: string = 'lara-dark-blue';
   LARA_LIGHT: string = 'lara-light-blue';
+  LARA_PURPLE: string = 'lara-light-purple';
 
   changeTheme(theme: string) {
     this.themeService.switchTheme(theme);
