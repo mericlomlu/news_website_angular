@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { ThemeService } from 'src/app/theme.service';
+import {Component} from '@angular/core';
+import {ThemeService} from 'src/app/theme.service';
+import {themes} from "../../constants";
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,13 +8,12 @@ import { ThemeService } from 'src/app/theme.service';
   styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent {
-  constructor(private themeService: ThemeService) {}
-
-  LARA_DARK: string = 'lara-dark-blue';
-  LARA_LIGHT: string = 'lara-light-blue';
-  LARA_PURPLE: string = 'lara-light-purple';
+  constructor(private themeService: ThemeService) {
+  }
 
   changeTheme(theme: string) {
     this.themeService.switchTheme(theme);
   }
+
+  protected readonly themes = themes;
 }
