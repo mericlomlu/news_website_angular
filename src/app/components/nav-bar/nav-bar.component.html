@@ -1,5 +1,13 @@
-<p-button styleClass="p-button p-button-primary" icon="pi pi-youtube" label="Dark"
-          (onClick)="changeTheme(themes.DARK_BLUE)"/>
-<p-button styleClass="p-button p-button-primary" icon="pi pi-youtube" label="Light"
-          (onClick)="changeTheme(themes.LIGHT_BLUE)"/>
-
+<div class="card">
+  <p-menubar [model]="menubarItems">
+    <ng-template pTemplate="start">
+      <img alt="News Website Logo" src="https://primefaces.org/cdn/primeng/images/primeng.svg" height="40" class="mr-2"/>
+    </ng-template>
+    <ng-template pTemplate="end">
+      <p-button styleClass="p-button p-button-primary" icon="pi pi-youtube" label="Dark"
+                (onClick)="changeTheme(themes.DARK_BLUE)"/>
+      <p-button styleClass="p-button p-button-primary" icon="pi pi-youtube" label="Light"
+                (onClick)="changeTheme(themes.LIGHT_BLUE)"/>
+    </ng-template>
+  </p-menubar>
+</div>

@@ -5,8 +5,8 @@ export const themes = {
 
 export const API_KEY: string = 'f1ddbf5d22b44e78bf658637e0713371';
 
-export const URLS = [{
-  TR: [{
+export const URLS = {
+  TR: {
     TOP_HEADLINES: `https://newsapi.org/v2/top-headlines?country=tr&apiKey=${API_KEY}`,
     BUSINESS: `https://newsapi.org/v2/top-headlines?country=tr&category=business&apiKey=${API_KEY}`,
     ENTERTAINMENT: `https://newsapi.org/v2/top-headlines?country=tr&category=entertainment&apiKey=${API_KEY}`,
@@ -16,7 +16,7 @@ export const URLS = [{
     SPORTS: `https://newsapi.org/v2/top-headlines?country=tr&category=sports&apiKey=${API_KEY}`,
     TECHNOLOGY: `https://newsapi.org/v2/top-headlines?country=tr&category=technology&apiKey=${API_KEY}`,
 
-  }], US: [{
+  }, US: {
     TOP_HEADLINES: `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`,
     BUSINESS: `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${API_KEY}`,
     ENTERTAINMENT: `https://newsapi.org/v2/top-headlines?country=us&category=entertainment&apiKey=${API_KEY}`,
@@ -25,12 +25,12 @@ export const URLS = [{
     SCIENCE: `https://newsapi.org/v2/top-headlines?country=us&category=science&apiKey=${API_KEY}`,
     SPORTS: `https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=${API_KEY}`,
     TECHNOLOGY: `https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=${API_KEY}`,
-  }]
-}]
+  }
+}
 
 
-export const CATEGORIES = [{
-  TR: [{
+export const CATEGORIES = {
+  TR: {
     APPEARANCE: 'Görünüm',
     DARK_MODE: 'Karanlık',
     LIGHT_MODE: 'Aydınlık',
@@ -42,8 +42,8 @@ export const CATEGORIES = [{
     SCIENCE: 'Bilim',
     SPORTS: 'Spor',
     TECHNOLOGY: 'Teknoloji',
-  }],
-  US: [
+  },
+  US:
     {
       APPEARANCE: 'Appearance',
       DARK_MODE: 'Dark',
@@ -57,5 +57,5 @@ export const CATEGORIES = [{
       SPORTS: 'Sports',
       TECHNOLOGY: 'Technology',
     }
-  ]
-}]
+}
+
