@@ -3,11 +3,6 @@ import {ThemeService} from 'src/app/theme.service';
 import {MenuItem} from "primeng/api";
 import {CATEGORIES, themes} from "../../constants";
 
-interface Language {
-  label: string,
-  value: string;
-}
-
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
