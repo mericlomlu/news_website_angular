@@ -1,13 +1,22 @@
 <div class="card">
   <p-menubar [model]="menubarItems">
     <ng-template pTemplate="start">
-      <img alt="News Website Logo" src="https://primefaces.org/cdn/primeng/images/primeng.svg" height="40"
+      <img alt="News Website Logo" src="../../../assets/newspaper.svg" height='40'
            class="mr-2"/>
     </ng-template>
     <ng-template pTemplate="end">
-      <i class="pi pi-sun" style="font-size: 1.5rem"></i>
-      <p-inputSwitch [(ngModel)]="checked" (click)="changeTheme(checked)"></p-inputSwitch>
-      <i class="pi pi-moon" style="font-size: 1.5rem"></i>
+      <div class="card flex flex-row justify-content-end align-items-center gap-4">
+       <div class="card flex flex-row justify-content-end align-items-center gap-2">
+         <i class="pi pi-moon" style="font-size: 1.25rem"></i>
+         <div class='toggle-switch'>
+           <label>
+             <input type='checkbox' (click)="changeTheme()">
+             <span class='slider'></span>
+           </label>
+         </div>
+         <i class="pi pi-sun" style="font-size: 1.5rem"></i>
+       </div>
+      </div>
     </ng-template>
   </p-menubar>
 </div>

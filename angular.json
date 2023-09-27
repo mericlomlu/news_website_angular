@@ -36,12 +36,12 @@
             "styles": [
               "src/styles.scss",
               {
-                "input": "src/themes/bootstrap4-light-blue.scss",
+                "input": "./src/themes/bootstrap4-light-blue.scss",
                 "bundleName": "bootstrap4-light-blue",
                 "inject": false
               },
               {
-                "input": "src/themes/bootstrap4-dark-blue.scss",
+                "input": "./src/themes/bootstrap4-dark-blue.scss",
                 "bundleName": "bootstrap4-dark-blue",
                 "inject": false
               }
