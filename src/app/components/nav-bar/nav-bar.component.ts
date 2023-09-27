@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {ThemeService} from 'src/app/theme.service';
 import {MenuItem} from "primeng/api";
 import {CATEGORIES, themes} from "../../constants";
@@ -8,14 +8,15 @@ import {CATEGORIES, themes} from "../../constants";
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.scss'],
 })
-export class NavBarComponent implements OnInit {
+export class NavBarComponent implements OnInit, OnChanges {
   constructor(private themeService: ThemeService,) {
   }
 
   menubarItems: MenuItem[] | undefined;
   selectedLanguage: string = 'US';
   constants: typeof CATEGORIES.TR = CATEGORIES.US;
-  themes: typeof themes = themes
+  checked: boolean = false;
+
   ngOnInit() {
     this.setSelectedLanguage(this.selectedLanguage);
     this.menubarItems = [
@@ -52,16 +53,21 @@ export class NavBarComponent implements OnInit {
         icon: 'pi pi-mobile'
       }
     ]
-
   }
+
 
   setSelectedLanguage(selection: string) {
     this.selectedLanguage = selection;
     this.constants = selection === 'TR' ? CATEGORIES.TR : CATEGORIES.US;
   }
 
-  changeTheme(theme: string) {
-    this.themeService.switchTheme(theme);
+  changeTheme(isChecked: boolean) {
+    isChecked ? this.themeService.switchTheme(themes.DARK_BLUE) : this.themeService.switchTheme(themes.LIGHT_BLUE);
   }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.changeTheme(this.checked);
+  }
+
 
 }

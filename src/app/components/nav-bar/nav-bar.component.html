@@ -1,13 +1,13 @@
 <div class="card">
   <p-menubar [model]="menubarItems">
     <ng-template pTemplate="start">
-      <img alt="News Website Logo" src="https://primefaces.org/cdn/primeng/images/primeng.svg" height="40" class="mr-2"/>
+      <img alt="News Website Logo" src="https://primefaces.org/cdn/primeng/images/primeng.svg" height="40"
+           class="mr-2"/>
     </ng-template>
     <ng-template pTemplate="end">
-      <p-button styleClass="p-button p-button-primary" icon="pi pi-youtube" label="Dark"
-                (onClick)="changeTheme(themes.DARK_BLUE)"/>
-      <p-button styleClass="p-button p-button-primary" icon="pi pi-youtube" label="Light"
-                (onClick)="changeTheme(themes.LIGHT_BLUE)"/>
+      <i class="pi pi-sun" style="font-size: 1.5rem"></i>
+      <p-inputSwitch [(ngModel)]="checked" (click)="changeTheme(checked)"></p-inputSwitch>
+      <i class="pi pi-moon" style="font-size: 1.5rem"></i>
     </ng-template>
   </p-menubar>
 </div>
