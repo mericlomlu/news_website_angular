@@ -1,21 +1,25 @@
 <div class="card">
-  <p-menubar [model]="menubarItems">
+  <p-menubar [model]="selectedLanguage?.value!=='TR'?menubarItemsUS:menubarItemsTR">
     <ng-template pTemplate="start">
-      <img alt="News Website Logo" src="../../../assets/newspaper.svg" height='40'
-           class="mr-2"/>
+      <img alt="News Website Logo" class="mr-2" height='40'
+           src="../../../assets/newspaper.svg"/>
     </ng-template>
     <ng-template pTemplate="end">
-      <div class="card flex flex-row justify-content-end align-items-center gap-4">
-       <div class="card flex flex-row justify-content-end align-items-center gap-2">
-         <i class="pi pi-moon" style="font-size: 1.25rem"></i>
-         <div class='toggle-switch'>
-           <label>
-             <input type='checkbox' (click)="changeTheme()">
-             <span class='slider'></span>
-           </label>
-         </div>
-         <i class="pi pi-sun" style="font-size: 1.5rem"></i>
-       </div>
+      <div class="flex flex-row justify-content-end align-items-center gap-4">
+        <div class="card flex justify-content-center flex-grow-1">
+          <p-dropdown [(ngModel)]="selectedLanguage" [options]="languageOptions" optionLabel="label"
+                      optionValue="value"></p-dropdown>
+        </div>
+        <div class="card flex flex-row justify-content-end align-items-center gap-2">
+          <i class="pi pi-moon flex flex-grow-1" style="font-size: 1.25rem"></i>
+          <div class='toggle-switch'>
+            <label>
+              <input (click)="changeTheme()" type='checkbox'>
+              <span class='slider'></span>
+            </label>
+          </div>
+          <i class="pi pi-sun flex-grow-1" style="font-size: 1.5rem"></i>
+        </div>
       </div>
     </ng-template>
   </p-menubar>

@@ -3,6 +3,11 @@ import {ThemeService} from 'src/app/theme.service';
 import {MenuItem} from "primeng/api";
 import {CATEGORIES, themes} from "../../constants";
 
+type LanguageOptions = {
+  label: string;
+  value: string;
+}
+
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
@@ -12,62 +17,100 @@ export class NavBarComponent implements OnInit {
   constructor(private themeService: ThemeService,) {
   }
 
-  menubarItems: MenuItem[] | undefined;
-  languages: { label: string, value: string }[] = [{label: 'TR', value: 'TR'}, {label: 'ENG', value: 'US'}]
-  selectedLanguageValue: string = 'US';
-  constants: typeof CATEGORIES.TR = CATEGORIES.US;
+  menubarItemsUS: MenuItem[] | undefined;
+  menubarItemsTR: MenuItem[] | undefined;
+  languageOptions: LanguageOptions[] | undefined;
+  public selectedLanguage: LanguageOptions | undefined;
+  public tempSelectedLanguage: LanguageOptions | undefined;
   checked: boolean = true;
 
   ngOnInit() {
-    this.setSelectedLanguage(this.selectedLanguageValue);
-  }
-
-
-  setSelectedLanguage(selection: string) {
-    this.selectedLanguageValue = selection;
-    this.constants = selection === 'TR' ? CATEGORIES.TR : CATEGORIES.US;
-    this.menubarItems = [
+    this.languageOptions = [{label: 'ENG', value: 'US'}, {label: 'TR', value: 'TR'}];
+    this.selectedLanguage = this.languageOptions[0];
+    this.tempSelectedLanguage = this.selectedLanguage;
+    this.menubarItemsUS = [
       {
-        label: this.constants.TOP_HEADLINES,
+        label: CATEGORIES.US.TOP_HEADLINES,
         icon: 'pi pi-home',
         routerLink: ['/'],
       },
       {
-        label: this.constants.BUSINESS,
+        label: CATEGORIES.US.BUSINESS,
         icon: 'pi pi-chart-line',
         routerLink: ['/business']
       },
       {
-        label: this.constants.ENTERTAINMENT,
+        label: CATEGORIES.US.ENTERTAINMENT,
         icon: 'pi pi-at',
         routerLink: ['/entertainment']
       },
       {
-        label: this.constants.GENERAL,
+        label: CATEGORIES.US.GENERAL,
         icon: 'pi pi-globe',
         routerLink: ['/general']
       },
       {
-        label: this.constants.HEALTH,
+        label: CATEGORIES.US.HEALTH,
         icon: 'pi pi-heart',
         routerLink: ['/health']
       },
       {
-        label: this.constants.SCIENCE,
+        label: CATEGORIES.US.SCIENCE,
         icon: 'pi pi-calculator',
         routerLink: ['/science']
       },
       {
-        label: this.constants.SPORTS,
+        label: CATEGORIES.US.SPORTS,
         icon: 'pi pi-stopwatch',
         routerLink: ['/sports']
       },
       {
-        label: this.constants.TECHNOLOGY,
+        label: CATEGORIES.US.TECHNOLOGY,
         icon: 'pi pi-mobile',
         routerLink: ['/technology']
       }
     ]
+    this.menubarItemsTR = [
+      {
+        label: CATEGORIES.TR.TOP_HEADLINES,
+        icon: 'pi pi-home',
+        routerLink: ['/'],
+      },
+      {
+        label: CATEGORIES.TR.BUSINESS,
+        icon: 'pi pi-chart-line',
+        routerLink: ['/business']
+      },
+      {
+        label: CATEGORIES.TR.ENTERTAINMENT,
+        icon: 'pi pi-at',
+        routerLink: ['/entertainment']
+      },
+      {
+        label: CATEGORIES.TR.GENERAL,
+        icon: 'pi pi-globe',
+        routerLink: ['/general']
+      },
+      {
+        label: CATEGORIES.TR.HEALTH,
+        icon: 'pi pi-heart',
+        routerLink: ['/health']
+      },
+      {
+        label: CATEGORIES.TR.SCIENCE,
+        icon: 'pi pi-calculator',
+        routerLink: ['/science']
+      },
+      {
+        label: CATEGORIES.TR.SPORTS,
+        icon: 'pi pi-stopwatch',
+        routerLink: ['/sports']
+      },
+      {
+        label: CATEGORIES.TR.TECHNOLOGY,
+        icon: 'pi pi-mobile',
+        routerLink: ['/technology']
+      }]
   }
 
   changeTheme() {
